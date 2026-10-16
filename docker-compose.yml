@@ -1,8 +1,16 @@
+# Career of Telangana Students – production container.
+# No public port: it joins the existing "ggtech-network", and ggtech-nginx-live
+# forwards https://career.ggtech.info to http://career-students:5010
 services:
-  career-of-telangana:
+  career-students:
     build: .
-    image: career-of-telangana:latest
-    container_name: career-of-telangana
-    ports:
-      - "5010:5010"
+    image: career-students:latest
+    container_name: career-students
     restart: unless-stopped
+    networks:
+      - ggtech-network
+    mem_limit: 128m
+
+networks:
+  ggtech-network:
+    external: true
