@@ -1,0 +1,5 @@
+node_modules
+dist
+data-generator/output
+data-generator/__pycache__
+*.log

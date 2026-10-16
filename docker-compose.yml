@@ -1,0 +1,8 @@
+services:
+  career-of-telangana:
+    build: .
+    image: career-of-telangana:latest
+    container_name: career-of-telangana
+    ports:
+      - "5010:5010"
+    restart: unless-stopped
